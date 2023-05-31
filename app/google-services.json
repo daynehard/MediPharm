@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "218101817170",
+    "project_id": "medipharm-37239",
+    "storage_bucket": "medipharm-37239.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218101817170:android:8bc7466dc4ee633455a48b",
+        "android_client_info": {
+          "package_name": "com.example.medipharm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218101817170-dup58gtmbfi8o2l6cqpj9e929hlqkni3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCX5H0s1XerdudVPweq38C9wx6pQUuoxiU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218101817170-dup58gtmbfi8o2l6cqpj9e929hlqkni3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
