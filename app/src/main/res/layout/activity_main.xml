@@ -348,6 +348,7 @@
         </com.google.android.material.bottomappbar.BottomAppBar>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/cartBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FF0CB6C6"
@@ -355,9 +356,8 @@
             android:src="@drawable/shopping_cart"
             app:backgroundTint="#FF0CB6C6"
             app:layout_anchor="@id/app_bar"
-            app:maxImageSize="30dp"
 
-            >
+            app:maxImageSize="30dp">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

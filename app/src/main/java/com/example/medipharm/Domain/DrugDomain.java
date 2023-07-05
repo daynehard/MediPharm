@@ -1,6 +1,8 @@
 package com.example.medipharm.Domain;
 
-public class DrugDomain {
+import java.io.Serializable;
+
+public class DrugDomain implements Serializable {
     private String title;
     private String pic;
     private String description;
