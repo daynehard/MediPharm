@@ -27,6 +27,13 @@ public class ErrorLoginHandler extends AppCompatActivity {
                 startActivity(intent_acc);
             }
         });
+        back_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_acc = new Intent(ErrorLoginHandler.this, LoginActivity.class);
+                startActivity(intent_acc);
+            }
+        });
 
     }
 }

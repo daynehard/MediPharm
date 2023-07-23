@@ -15,7 +15,7 @@ import com.example.medipharm.R;
 
 public class ShowDetailsActivity extends AppCompatActivity {
 private TextView addToCartBtn;
-private TextView titleTxt, feeTxt, descriptionTxt, numberOrderTxt;
+private TextView titleTxt, feeTxt, descriptionTxt, numberOrderTxt, howtouseTxt;
 private ImageView plusBtn, minusBtn, picDrug;
 private DrugDomain object;
 int numberOrder = 1;
@@ -41,6 +41,7 @@ private ManagementCart managementCart;
         titleTxt.setText(object.getTitle());
         feeTxt.setText("ksh"+object.getFee());
         descriptionTxt.setText(object.getDescription());
+        howtouseTxt.setText(object.getHowtouse());
         numberOrderTxt.setText(String.valueOf(numberOrder));
 
         plusBtn.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +76,7 @@ private ManagementCart managementCart;
         titleTxt= findViewById(R.id.titleTxt);
         feeTxt= findViewById(R.id.priceTxt);
         descriptionTxt= findViewById(R.id.descriptionTxt);
+        howtouseTxt = findViewById(R.id.howtouseTxt);
         numberOrderTxt= findViewById(R.id.numberOrderTxt);
         plusBtn= findViewById(R.id.plusBtn);
         minusBtn= findViewById(R.id.minusBtn);

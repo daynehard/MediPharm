@@ -23,6 +23,7 @@ public class AIntroActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(AIntroActivity.this,MainActivity.class));
+                finish();
             }
         });
     }

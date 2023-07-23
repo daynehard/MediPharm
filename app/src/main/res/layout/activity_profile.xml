@@ -4,283 +4,291 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back4"
     tools:context=".Activity.Profile">
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="808dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardExperience"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:elevation="10dp"
+            app:cardCornerRadius="15dp">
 
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardExperience"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="705dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="20dp"
-                android:elevation="10dp"
-                app:cardCornerRadius="15dp">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/relativeExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Personal"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:id="@+id/addExperience"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
+                        android:background="@drawable/search_button"
+                        android:text="Add Personal Info"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black" />
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/cardview_dark_background" />
+
+                <TextView
+                    android:id="@+id/textView45"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="First Name"
+                    android:paddingLeft="15dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editTextText"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:drawableLeft="@drawable/baseline_name"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:hint="Enter your first name"
+                    android:inputType="text"
+                    android:paddingStart="5dp" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Last Name"
+                    android:paddingLeft="15dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editTextText1"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:drawableLeft="@drawable/baseline_name"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:hint="Enter your last name"
+                    android:inputType="text"
+                    android:paddingStart="5dp" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Address"
+                    android:paddingLeft="15dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editTextText2"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:drawableLeft="@drawable/baseline_location"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:hint="Enter your home address"
+                    android:inputType="text"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alternative Address"
+                    android:paddingLeft="15dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editTextText3"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:drawableLeft="@drawable/baseline_location"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:hint="Enter your alternative address"
+                    android:inputType="text"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/textView49"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date of Birth"
+                    android:paddingLeft="15dp"
+                    android:textSize="14sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
-                        android:id="@+id/relativeExperience"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp">
-
-                        <TextView
-                            android:id="@+id/textView44"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="15dp"
-                            android:text="Personal"
-                            android:textColor="@color/black"
-                            android:textSize="16sp" />
-
-                        <Button
-                            android:id="@+id/addExperience"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginRight="20dp"
-                            android:background="@drawable/search_button"
-                            android:text="Add Personal Info"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black" />
-                    </RelativeLayout>
-
-                    <View
-                        android:id="@+id/view2"
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@color/cardview_dark_background" />
-
-                    <TextView
-                        android:id="@+id/textView45"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="First Name"
-                        android:textSize="14sp" />
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
                     <EditText
-                        android:id="@+id/editTextText"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:ems="10"
-                        android:hint="Enter your first name"
-                        android:inputType="text"
-                        android:paddingStart="5dp" />
-
-                    <TextView
-                        android:id="@+id/textView46"
-                        android:layout_width="match_parent"
+                        android:id="@+id/editTextText4"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last Name"
-                        android:textSize="14sp" />
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Select Date"
+                        android:inputType="text" />
 
                     <EditText
-                        android:id="@+id/editTextText1"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:ems="10"
-                        android:hint="Enter your last name"
-                        android:inputType="text"
-                        android:paddingStart="5dp" />
-
-                    <TextView
-                        android:id="@+id/textView47"
-                        android:layout_width="match_parent"
+                        android:id="@+id/editTextText5"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Address"
-                        android:textSize="14sp" />
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:hint="Select Month"
+                        android:inputType="text" />
 
                     <EditText
-                        android:id="@+id/editTextText2"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
+                        android:id="@+id/editTextText9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
                         android:ems="10"
-                        android:hint="Enter your home address"
-                        android:inputType="text"
-                        android:paddingStart="5dp"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/textView48"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Alternative Address"
-                        android:textSize="14sp" />
-
-                    <EditText
-                        android:id="@+id/editTextText3"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:ems="10"
-                        android:hint="Enter your alternative address"
-                        android:inputType="text"
-                        android:paddingStart="5dp"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/textView49"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Date of Birth"
-                        android:textSize="14sp" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-
-                        <EditText
-                            android:id="@+id/editTextText4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="Select Date"
-                            android:inputType="text" />
-
-                        <EditText
-                            android:id="@+id/editTextText5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="Select Month"
-                            android:inputType="text" />
-
-                        <EditText
-                            android:id="@+id/editTextText9"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                            android:hint="Select year"
-                            android:inputType="text" />
-                    </LinearLayout>
-
-
-                    <TextView
-                        android:id="@+id/textView50"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Email"
-                        android:textSize="14sp" />
-
-                    <EditText
-                        android:id="@+id/editTextText6"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:ems="10"
-                        android:hint="Enter your email address"
-                        android:inputType="text"
-                        android:paddingStart="5dp"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/textView51"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Contact"
-                        android:textSize="14sp" />
-
-                    <EditText
-                        android:id="@+id/editTextText7"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:ems="10"
-                        android:hint="Enter your phone number"
-                        android:inputType="text"
-                        android:paddingStart="5dp"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:id="@+id/textView52"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Alternative Contact"
-                        android:textSize="14sp" />
-
-                    <EditText
-                        android:id="@+id/editTextText8"
-                        android:layout_width="match_parent"
-                        android:layout_height="45dp"
-                        android:ems="10"
-                        android:hint="Enter your alternative contact"
-                        android:inputType="text"
-                        android:paddingStart="5dp"
-                        android:textColor="@color/black" />
-
-
-                    <Button
-                        android:id="@+id/btnCancelExperience"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/button"
-                        android:text="Cancel"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white" />
-
-                    <Button
-                        android:id="@+id/button5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/button"
-                        android:text="Save"
-                        android:textAllCaps="false"
-                        android:textColor="@color/white" />
+                        android:hint="Select year"
+                        android:inputType="text" />
                 </LinearLayout>
-            </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardEdtProfile"
-                app:cardElevation="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:cardCornerRadius="5dp"
-                android:layout_alignParentBottom="true">
 
-                <Button
-                    android:id="@+id/button10"
-                    android:gravity="center"
+                <TextView
+                    android:id="@+id/textView50"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:background="@drawable/button"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginBottom="10dp"
-                    android:textAllCaps="false"
-                    android:text="Edit Profile" />
-            </androidx.cardview.widget.CardView>
+                    android:text="Email"
+                    android:paddingLeft="15dp"
+                    android:textSize="14sp" />
 
-            <androidx.coordinatorlayout.widget.CoordinatorLayout
-                android:layout_width="match_parent"
-                android:layout_height="98dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                <EditText
+                    android:id="@+id/editTextText6"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:drawableLeft="@drawable/baseline_email_24"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:hint="Enter your email address"
+                    android:inputType="text"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact"
+                    android:paddingLeft="15dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editTextText7"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:drawableLeft="@drawable/baseline_contact"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:hint="Enter your phone number"
+                    android:inputType="text"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/textView52"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Alternative Contact"
+                    android:paddingLeft="15dp"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/editTextText8"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:drawableLeft="@drawable/baseline_contact"
+                    android:drawablePadding="15dp"
+                    android:ems="10"
+                    android:hint="Enter your alternative contact"
+                    android:inputType="text"
+                    android:paddingStart="5dp"
+                    android:textColor="@color/black" />
+
+
+                <Button
+                    android:id="@+id/btnCancelExperience"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/button"
+                    android:text="Cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/button"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/button"
+                    android:text="Update Profile"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.bottomappbar.BottomAppBar
                 android:id="@+id/app_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/cardExperience"
+                android:layout_below="@+id/cardEdtProfile"
                 android:layout_gravity="bottom"
                 android:layout_marginTop="-751dp"
                 android:backgroundTint="#f6f6f6"
@@ -419,24 +427,25 @@
                 </LinearLayout>
             </com.google.android.material.bottomappbar.BottomAppBar>
 
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/cartBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#FF0CB6C6"
-                    android:elevation="3dp"
-                    android:src="@drawable/shopping_cart"
-                    app:backgroundTint="#FF0CB6C6"
-                    app:layout_anchor="@id/app_bar"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/cartBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FF0CB6C6"
+                android:elevation="3dp"
+                android:src="@drawable/shopping_cart"
+                app:backgroundTint="#FF0CB6C6"
+                app:layout_anchor="@id/app_bar"
 
-                    app:maxImageSize="30dp">
+                app:maxImageSize="30dp">
 
-                </com.google.android.material.floatingactionbutton.FloatingActionButton>
-            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
-        </LinearLayout>
 
-    </ScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
 
 
 

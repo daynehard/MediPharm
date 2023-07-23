@@ -12,6 +12,9 @@
         android:theme="@style/Theme.MediPharm"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.ShowCategory"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Profile"
             android:exported="false" />
         <activity
@@ -27,9 +30,6 @@
             android:name=".Activity.ShowDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Splash"
-            android:exported="false" />
-        <activity
             android:name=".Activity.LoginActivity"
             android:exported="false" />
         <activity
@@ -40,6 +40,9 @@
             android:exported="false" />
         <activity
             android:name=".Activity.AIntroActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
