@@ -12,6 +12,18 @@
         android:theme="@style/Theme.MediPharm"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.Meow_nav"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.BaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Settings"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Support"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ShowCategory"
             android:exported="false" />
         <activity

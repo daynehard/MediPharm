@@ -17,8 +17,9 @@ import com.example.medipharm.Domain.DrugDomain;
 import com.example.medipharm.Helper.ManagementCart;
 import com.example.medipharm.Interface.ChangeNumberItemsListener;
 import com.example.medipharm.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class CartListActivity extends AppCompatActivity {
+public class CartListActivity extends BaseActivity {
 private RecyclerView.Adapter adapter;
 private RecyclerView recyclerViewList;
 private ManagementCart managementCart;
@@ -38,10 +39,12 @@ private ScrollView scrollView;
         CalculateCart();
         bottomNavigation();
     }
-
     private void bottomNavigation(){
         LinearLayout homeBtn = findViewById(R.id.homebtn);
-        LinearLayout profilBtn = findViewById(R.id.profilbtn);
+        LinearLayout profileBtn = findViewById(R.id.profilbtn);
+        LinearLayout supportBtn = findViewById(R.id.supportbtn);
+        LinearLayout settingsBtn = findViewById(R.id.settingsbtn);
+
 
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,13 +52,26 @@ private ScrollView scrollView;
                 startActivity(new Intent(CartListActivity.this, MainActivity.class));
             }
         });
-        profilBtn.setOnClickListener(new View.OnClickListener() {
+        profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CartListActivity.this,Profile.class));
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity.this, MainActivity.class));
+            }
+        });
+        supportBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity.this,Support.class));
+            }
+        });
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity.this,Settings.class));
             }
         });
     }
+
     private void initView() {
         recyclerViewList = findViewById(R.id.cartView);
         totalFeeTxt = findViewById(R.id.totalFeeTxt);

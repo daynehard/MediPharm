@@ -42,23 +42,23 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
         switch (position) {
             case 0:
-                picUrl = "pills1";
+                picUrl = "pills2";
                 holder.mainlayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.pill_background1));
                 break;
             case 1:
-                picUrl = "pills2";
+                picUrl = "pills5";
                 holder.mainlayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.pill_background2));
                 break;
             case 2:
-                picUrl = "pills3";
+                picUrl = "vaccine";
                 holder.mainlayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.pill_background3));
                 break;
             case 3:
-                picUrl = "pills4";
+                picUrl = "device";
                 holder.mainlayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.pill_background4));
                 break;
             case 4:
-                picUrl = "pills5";
+                picUrl = "syrup";
                 holder.mainlayout.setBackground(ContextCompat.getDrawable(holder.itemView.getContext(), R.drawable.pill_background5));
                 break;
         }
