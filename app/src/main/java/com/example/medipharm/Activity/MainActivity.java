@@ -1,9 +1,11 @@
 package com.example.medipharm.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +15,9 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.constants.ScaleTypes;
+import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.medipharm.Adapter.CategoryAdapter;
 import com.example.medipharm.Adapter.PopularAdapter;
 import com.example.medipharm.Domain.CategoryDomain;
@@ -22,6 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter, adapter2;
@@ -36,8 +42,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerViewPopular();
         bottomNavigation();
 
+
         ImageButton profilebtn = findViewById(R.id.profilebtn);
         TextView ViewAll = findViewById(R.id.viewall);
+        TextView order = findViewById(R.id.ordernow);
         profilebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -47,6 +55,12 @@ public class MainActivity extends AppCompatActivity {
         ViewAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, ShowCategory.class));
+            }
+        });
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, ShowCategory.class));
             }
         });
@@ -98,6 +112,8 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new CategoryAdapter(category, this);
         recyclerViewCategoryList.setAdapter(adapter);
+
+
     }
 
     private void recyclerViewPopular() {

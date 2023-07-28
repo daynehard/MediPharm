@@ -22,7 +22,7 @@ public class AIntroActivity extends AppCompatActivity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(AIntroActivity.this,Meow_nav.class));
+                startActivity(new Intent(AIntroActivity.this,MainActivity.class));
                 finish();
             }
         });

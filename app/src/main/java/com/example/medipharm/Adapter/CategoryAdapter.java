@@ -2,6 +2,7 @@ package com.example.medipharm.Adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,8 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.medipharm.Activity.ShowCategory;
+import com.example.medipharm.Activity.ShowDetailsActivity;
 import com.example.medipharm.Domain.CategoryDomain;
 import com.example.medipharm.R;
 
@@ -68,7 +71,17 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
         Glide.with(context)
                 .load(drawableResourceId)
                 .into(holder.categoryPic);
+
+        holder.categoryPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowCategory.class);
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
+
+
 
     @Override
     public int getItemCount() {

@@ -16,8 +16,7 @@ import kotlin.jvm.functions.Function1;
 public class Meow_nav extends AppCompatActivity {
 
     private MeowBottomNavigation bottomNavigation;
-     RelativeLayout  home, profile, cart, support, settings;
-
+    RelativeLayout home, profile, cart, support, settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -207,5 +206,6 @@ public class Meow_nav extends AppCompatActivity {
             }
         });
     }
+
 
 }
