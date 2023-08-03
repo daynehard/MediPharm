@@ -8,14 +8,13 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
-import com.etebarian.meowbottomnavigation.MeowBottomNavigation;
 import com.example.medipharm.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
-public class Profile extends BaseActivity {
+public class Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +45,7 @@ public class Profile extends BaseActivity {
             supportBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    startActivity(new Intent(Profile.this,Meow_nav.class));
+                    startActivity(new Intent(Profile.this,Support.class));
                 }
             });
             settingsBtn.setOnClickListener(new View.OnClickListener() {

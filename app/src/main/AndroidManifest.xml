@@ -12,7 +12,37 @@
         android:theme="@style/Theme.MediPharm"
         tools:targetApi="31">
         <activity
-            android:name=".ui.Category_Vitamins"
+            android:name=".Activity.ShowCategoryDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Fragments.CatDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Adapter.Cat_SyrupAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Adapter.Cat_DevicesAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Adapter.Cat_VaccinesAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".Fragments.SyrupsFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Fragments.DevicesFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Fragments.VaccinesFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Fragments.PainReliefFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Fragments.VitaminsFragment"
+            android:exported="false" />
+        <activity
+            android:name=".Adapter.CategoryVitaminAdapter"
             android:exported="false" />
         <activity
             android:name=".Activity.Meow_nav"
@@ -31,9 +61,6 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Profile"
-            android:exported="false" />
-        <activity
-            android:name=".Activity.EntrySwitch"
             android:exported="false" />
         <activity
             android:name=".Activity.ErrorLoginHandler"

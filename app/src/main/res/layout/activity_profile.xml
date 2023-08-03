@@ -8,31 +8,28 @@
     tools:context=".Activity.Profile">
 
 
-    <TextView
-        android:id="@+id/textView16"
+    <ImageView
+        android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Ian Deinhard"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
+        app:srcCompat="@drawable/profile1" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="304dp"
         android:layout_height="45dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="70dp"
         android:background="@drawable/button"
         android:drawableLeft="@drawable/baseline_edit"
         android:drawableRight="@drawable/arrow_right"
         android:text="Edit User Info"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <Button
         android:id="@+id/button3"
@@ -86,15 +83,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
-
-
-    </LinearLayout>
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"

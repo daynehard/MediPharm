@@ -54,6 +54,14 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
                 holder.itemView.getContext().startActivity(intent);
             }
         });
+        holder.pic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(holder.itemView.getContext(), ShowDetailsActivity.class);
+                intent.putExtra("object", popularDrug.get(holder.getAdapterPosition()));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
 

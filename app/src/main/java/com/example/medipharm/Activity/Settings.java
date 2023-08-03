@@ -11,7 +11,7 @@ import android.widget.SeekBar;
 import com.example.medipharm.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class Settings extends BaseActivity {
+public class Settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class Settings extends BaseActivity {
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Settings.this,Settings.class));
+                startActivity(new Intent(Settings.this,CartListActivity.class));
             }
         });
     }

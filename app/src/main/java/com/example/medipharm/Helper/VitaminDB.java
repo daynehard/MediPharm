@@ -32,7 +32,6 @@ import android.text.TextUtils;
 import android.util.Log;
 
 
-import com.example.medipharm.Domain.DrugDomain;
 import com.example.medipharm.Domain.VitaminsDomain;
 import com.google.gson.Gson;
 
@@ -46,13 +45,13 @@ import java.util.Arrays;
 import java.util.Map;
 
 
-public class TinyDB {
+public class VitaminDB {
 
-    private SharedPreferences preferences;
+    private static SharedPreferences preferences;
     private String DEFAULT_APP_IMAGEDATA_DIRECTORY;
     private String lastImagePath = "";
 
-    public TinyDB(Context appContext) {
+    public VitaminDB(Context appContext) {
         preferences = PreferenceManager.getDefaultSharedPreferences(appContext);
     }
 
@@ -296,7 +295,7 @@ public class TinyDB {
      * @param key SharedPreferences key
      * @return ArrayList of String
      */
-    public ArrayList<String> getListString(String key) {
+    public static ArrayList<String> getListString(String key) {
         return new ArrayList<String>(Arrays.asList(TextUtils.split(preferences.getString(key, ""), "‚‗‚")));
     }
 
@@ -330,14 +329,14 @@ public class TinyDB {
     }
 
 
-    public ArrayList<DrugDomain> getListObject(String key){
+    public static ArrayList<VitaminsDomain> getListObject(String key){
         Gson gson = new Gson();
 
         ArrayList<String> objStrings = getListString(key);
-        ArrayList<DrugDomain> playerList =  new ArrayList<DrugDomain>();
+        ArrayList<VitaminsDomain> playerList =  new ArrayList<VitaminsDomain>();
 
         for(String jObjString : objStrings){
-            DrugDomain player  = gson.fromJson(jObjString,  DrugDomain.class);
+            VitaminsDomain player  = gson.fromJson(jObjString,  VitaminsDomain.class);
             playerList.add(player);
         }
         return playerList;
@@ -445,7 +444,7 @@ public class TinyDB {
      * @param key SharedPreferences key
      * @param stringList ArrayList of String to be added
      */
-    public void putListString(String key, ArrayList<String> stringList) {
+    public static void putListString(String key, ArrayList<String> stringList) {
         checkForNullKey(key);
         String[] myStringList = stringList.toArray(new String[stringList.size()]);
         preferences.edit().putString(key, TextUtils.join("‚‗‚", myStringList)).apply();
@@ -487,16 +486,16 @@ public class TinyDB {
      * @param obj is the Object you want to put
      */
     public void putObject(String key, Object obj){
-    	checkForNullKey(key);
-    	Gson gson = new Gson();
-    	putString(key, gson.toJson(obj));
+        checkForNullKey(key);
+        Gson gson = new Gson();
+        putString(key, gson.toJson(obj));
     }
 
-    public void putListObject(String key, ArrayList<DrugDomain> playerList){
+    public static void putListObject(String key, ArrayList<VitaminsDomain> playerList){
         checkForNullKey(key);
         Gson gson = new Gson();
         ArrayList<String> objStrings = new ArrayList<String>();
-        for(DrugDomain player: playerList){
+        for(VitaminsDomain player: playerList){
             objStrings.add(gson.toJson(player));
         }
         putListString(key, objStrings);
@@ -579,7 +578,7 @@ public class TinyDB {
      * null keys would corrupt the shared pref file and make them unreadable this is a preventive measure
      * @param key the pref key to check
      */
-    private void checkForNullKey(String key){
+    private static void checkForNullKey(String key){
         if (key == null){
             throw new NullPointerException();
         }
