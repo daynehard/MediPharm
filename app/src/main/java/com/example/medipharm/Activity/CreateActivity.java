@@ -37,7 +37,6 @@ public class CreateActivity extends AppCompatActivity {
     private Button login;
     private ConstraintLayout signupbtn;
     private ImageView google;
-    private ImageButton backbtn1;
 
     private FirebaseAuth auth;
     private DatabaseReference databaseReference;
@@ -60,7 +59,7 @@ public class CreateActivity extends AppCompatActivity {
         login = findViewById(R.id.login);
         signupbtn = findViewById(R.id.signupbtn);
         google = findViewById(R.id.google);
-        backbtn1 = findViewById(R.id.backbtn1);
+
 
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,12 +90,7 @@ public class CreateActivity extends AppCompatActivity {
             }
         });
 
-        backbtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(CreateActivity.this, MainActivity.class));
-            }
-        });
+
         terms.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
