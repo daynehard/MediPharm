@@ -37,7 +37,7 @@ public class Settings extends AppCompatActivity {
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Settings.this, MainActivity.class));
+                startActivity(new Intent(Settings.this, Profile.class));
             }
         });
         supportBtn.setOnClickListener(new View.OnClickListener() {

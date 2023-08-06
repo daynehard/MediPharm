@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#147481"
+    android:orientation="vertical"
+    android:background="#0E505C"
     tools:context=".Activity.Settings">
 
     <RelativeLayout
@@ -26,4 +27,75 @@
             android:layout_centerInParent="true"
             android:textSize="20sp"/>
     </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/profile1"
+                android:layout_marginTop="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="Ian Deinhard"
+                android:textColor="#ffffff"
+                android:textSize="23sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="iandeinhard254@gmail.com"
+                android:textColor="#ccffffff"
+                android:textSize="18sp"
+                android:layout_gravity="center"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_marginTop="20dp"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="Edit Profile"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:background="@drawable/round_back_secondary_100"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:background="@drawable/round_back_white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:padding="12dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
