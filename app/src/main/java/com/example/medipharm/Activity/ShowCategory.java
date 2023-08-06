@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 import com.example.medipharm.Fragments.DevicesFragment;
 import com.example.medipharm.Fragments.PainReliefFragment;
@@ -32,38 +33,38 @@ public class ShowCategory extends AppCompatActivity {
             }
         });
 
-        Button expandvits = findViewById(R.id.expandvitamins);
-        Button expandpain = findViewById(R.id.expandpain);
-        Button expandvac = findViewById(R.id.expandvaccine);
-        Button expanddev = findViewById(R.id.expanddevice);
-        Button expandsyrup = findViewById(R.id.expandsyrup);
+        RelativeLayout vitamins = findViewById(R.id.vitamins);
+        RelativeLayout pain = findViewById(R.id.pain);
+        RelativeLayout vaccine = findViewById(R.id.vaccin);
+        RelativeLayout device = findViewById(R.id.device);
+        RelativeLayout syrup = findViewById(R.id.syrup);
 
 
-        expandvits.setOnClickListener(new View.OnClickListener() {
+        vitamins.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ShowCategory.this, VitaminsFragment.class));
             }
         });
-        expandpain.setOnClickListener(new View.OnClickListener() {
+        pain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ShowCategory.this, PainReliefFragment.class));
             }
         });
-        expandvac.setOnClickListener(new View.OnClickListener() {
+        vaccine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ShowCategory.this, VaccinesFragment.class));
             }
         });
-        expanddev.setOnClickListener(new View.OnClickListener() {
+        device.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ShowCategory.this, DevicesFragment.class));
             }
         });
-        expandsyrup.setOnClickListener(new View.OnClickListener() {
+        syrup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ShowCategory.this, SyrupsFragment.class));

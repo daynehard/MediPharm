@@ -11,6 +11,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.medipharm.Domain.DrugDomain;
 import com.example.medipharm.Helper.ManagementCart;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.example.medipharm.R;
 
 public class ShowDetailsActivity extends AppCompatActivity {
@@ -70,6 +72,18 @@ private ManagementCart managementCart;
             public void onClick(View view) {
                 object.setNumberInCart(numberOrder);
                 managementCart.insertDrug(object);
+
+                // Get a reference to the Realtime Database
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+
+                // Define the node where you want to store the cart items (e.g., "cart_items")
+                String cartNode = "cart_items";
+
+                // Push the cart item data to the Realtime Database
+                String cartItemId = databaseReference.child(cartNode).push().getKey();
+                databaseReference.child(cartNode).child(cartItemId).setValue(object);
+
+                // Display a confirmation message or handle any other logic here
             }
         });
     }

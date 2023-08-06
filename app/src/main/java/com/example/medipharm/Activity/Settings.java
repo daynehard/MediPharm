@@ -1,11 +1,15 @@
 package com.example.medipharm.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 
 import com.example.medipharm.R;
@@ -18,40 +22,53 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        bottomNavigation();
-    }
-    private void bottomNavigation(){
-        LinearLayout homeBtn = findViewById(R.id.homebtn);
-        LinearLayout profileBtn = findViewById(R.id.profilbtn);
-        LinearLayout supportBtn = findViewById(R.id.supportbtn);
-        FloatingActionButton floatingActionButton = findViewById(R.id.cartBtn);
+        AppCompatButton edit = findViewById(R.id.edit);
+        ImageView back = findViewById(R.id.back_btn);
+        RelativeLayout account = findViewById(R.id.accbtn);
+        RelativeLayout privacy = findViewById(R.id.privacybtn);
+        RelativeLayout help = findViewById(R.id.helpbtn);
+        RelativeLayout about = findViewById(R.id.aboutbtn);
+        RelativeLayout terms = findViewById(R.id.termsbtn);
+        RelativeLayout logout = findViewById(R.id.logoutbtn);
 
-
-
-        homeBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(Settings.this, MainActivity.class));
-            }
-        });
-        profileBtn.setOnClickListener(new View.OnClickListener() {
+        edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Settings.this, Profile.class));
             }
         });
-        supportBtn.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Settings.this,Support.class));
+                startActivity(new Intent(Settings.this, MainActivity.class));
             }
         });
-        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+        help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Settings.this,CartListActivity.class));
+                startActivity(new Intent(Settings.this, Support.class));
             }
         });
+        terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Settings.this, terms_and_conditions.class));
+            }
+        });
+        account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Settings.this, LoginActivity.class));
+            }
+        });
+        about.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Settings.this, About.class));
+            }
+        });
+
+
     }
 
 }

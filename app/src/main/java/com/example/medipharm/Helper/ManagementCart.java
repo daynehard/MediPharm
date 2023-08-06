@@ -35,7 +35,7 @@ public class ManagementCart {
         } else {
             listDrug.add(item);
         }
-        tinyDB.putListObject("CardList", listDrug);
+        setListCart(listDrug); // Update the cart items in TinyDB
         Toast.makeText(context, "Added To Your Cart", Toast.LENGTH_SHORT).show();
     }
 
@@ -43,9 +43,14 @@ public class ManagementCart {
         return tinyDB.getListObject("CartList");
     }
 
+    public void setListCart(ArrayList<DrugDomain> cartItems) {
+        tinyDB.putListObject("CartList", cartItems);
+    }
+
+
     public void plusNumberDrug(ArrayList<DrugDomain> listDrug, int position, ChangeNumberItemsListener changeNumberItemsListener) {
         listDrug.get(position).setNumberInCart(listDrug.get(position).getNumberInCart() + 1);
-        tinyDB.putListObject("Cartlist", listDrug);
+        tinyDB.putListObject("CartList", listDrug);
         changeNumberItemsListener.changed();
     }
 
@@ -60,10 +65,10 @@ public class ManagementCart {
     }
 
     public Double getTotalFee() {
-        ArrayList<DrugDomain> listfood = getListCart();
+        ArrayList<DrugDomain> listDrug = getListCart();
         double fee = 0;
-        for (int i = 0; i < listfood.size(); i++) {
-            fee = fee + (listfood.get(i).getFee() * listfood.get(i).getNumberInCart());
+        for (int i = 0; i < listDrug.size(); i++) {
+            fee = fee + (listDrug.get(i).getFee() * listDrug.get(i).getNumberInCart());
         }
         return fee;
     }

@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.medipharm.R;
@@ -32,6 +33,7 @@ public class CreateActivity extends AppCompatActivity {
     private EditText email;
     private EditText password;
     private EditText confirm;
+    private TextView terms;
     private Button login;
     private ConstraintLayout signupbtn;
     private ImageView google;
@@ -54,6 +56,7 @@ public class CreateActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         confirm = findViewById(R.id.confirm);
+        terms = findViewById(R.id.terms);
         login = findViewById(R.id.login);
         signupbtn = findViewById(R.id.signupbtn);
         google = findViewById(R.id.google);
@@ -92,6 +95,12 @@ public class CreateActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(CreateActivity.this, MainActivity.class));
+            }
+        });
+        terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CreateActivity.this, terms_and_conditions.class));
             }
         });
     }

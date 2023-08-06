@@ -2,4 +2,83 @@
     <string name="app_name">MediPharm</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="terms_and_conditions_text">
+    Terms and Conditions for MediPharm - Pharmacy App\n\n
+
+    Welcome to MediPharm, a mobile application ("App") designed to provide pharmacy services. By accessing and using the App, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these Terms and Conditions, you must not use the App.\n\n
+
+    1. Services:\n
+    MediPharm offers a platform where users can access information about medications, healthcare products, and other related services. The App may also facilitate the purchase of prescription and non-prescription medications, subject to applicable laws and regulations.\n\n
+
+    2. Medical Advice:\n
+    The information provided on MediPharm is for informational purposes only and is not intended as a substitute for professional medical advice, diagnosis, or treatment. Always seek the advice of a qualified healthcare professional for any medical concerns or conditions.\n\n
+
+    3. User Accounts:\n
+    To use certain features of the App, you may need to create a user account. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.\n\n
+
+    4. User Conduct:\n
+    You agree to use the App in a manner consistent with these Terms and Conditions and all applicable laws and regulations. You shall not engage in any activities that may harm, disrupt, or interfere with the App or its services.\n\n
+
+    5. Intellectual Property:\n
+    All content, logos, graphics, and software within the App are the intellectual property of MediPharm and are protected by copyright and other intellectual property laws.\n\n
+
+    6. Privacy Policy:\n
+    Your privacy is important to us. Please review our Privacy Policy, which explains how we collect, use, and protect your personal information.\n\n
+
+    7. Disclaimer of Warranties:\n
+    The App is provided on an "as is" basis without any warranties, express or implied. MediPharm does not guarantee the accuracy, completeness, or reliability of the information provided in the App.\n\n
+
+    8. Limitation of Liability:\n
+    In no event shall MediPharm be liable for any direct, indirect, incidental, consequential, or special damages arising out of or in connection with your use of the App or reliance on its content.\n\n
+
+    9. Indemnification:\n
+    You agree to indemnify and hold harmless MediPharm, its affiliates, and their respective officers, directors, employees, and agents from any claims, damages, losses, liabilities, costs, and expenses arising from your use of the App or violation of these Terms and Conditions.\n\n
+
+    10. Modification and Termination:\n
+    MediPharm reserves the right to modify, suspend, or terminate the App or any part thereof, at any time without notice. We may also update or change these Terms and Conditions from time to time. It is your responsibility to review them periodically.\n\n
+
+    11. Governing Law:\n
+    These Terms and Conditions shall be governed by and construed in accordance with the laws of [Your Country/Region], without regard to its conflict of laws principles.\n\n
+
+    12. Contact Us:\n
+    If you have any questions or concerns regarding these Terms and Conditions or the App, please contact us at [Email Address/Contact Information].\n\n
+
+    By using the MediPharm App, you acknowledge that you have read, understood, and agree to these Terms and Conditions. Thank you for using MediPharm!
+</string>
+
+    <string name="about_medipharm_text">
+    Welcome to MediPharm, your one-stop solution for all your pharmacy needs.\n Our mobile application ("App") is designed to provide convenient and reliable access to healthcare products, medications, and professional pharmacy services.\n Whether you\'re looking for over-the-counter products or prescription medications, MediPharm has got you covered.\n\n
+
+Our Mission:\n
+At MediPharm, our mission is to improve your healthcare experience by providing a seamless and user-friendly platform. We aim to empower you with easy access to essential healthcare information and reliable pharmaceutical products, all at your fingertips.
+
+Our Services:\n
+1. Medication Ordering: Browse a wide range of prescription and non-prescription medications, add them to your cart, and conveniently place your orders online.
+
+2. Healthcare Products: Discover a comprehensive selection of healthcare products, including vitamins, supplements, personal care items, and more.
+
+3. Prescription Management: Store and manage your prescriptions securely within the App, making it easier to order refills when needed.
+
+4. Pharmacy Locator: Find nearby partner pharmacies for pick-up options and enjoy fast and hassle-free order fulfillment.
+
+5. Health Information: Access accurate and up-to-date health information, drug interactions, and medication guides to make informed decisions about your healthcare.
+
+Why Choose MediPharm?\n
+1. Convenience: With MediPharm, you can order medications and healthcare products from the comfort of your home, saving you time and effort.
+
+2. Quality Assurance: We partner with licensed and reputable pharmacies to ensure that all products meet the highest quality standards.
+
+3. Expert Support: Our team of qualified pharmacists is available to answer your questions and provide personalized advice on medications and health concerns.
+
+4. Secure and Confidential: Your privacy is important to us. Rest assured that your personal information is protected with advanced security measures.
+
+Contact Us:\n
+If you have any questions or need assistance, our dedicated customer support team is here to help. You can reach us via email at iandeinhard254@gmail.com or call us at [+254 798890551].
+
+Stay Connected:\n
+Follow us on social media to stay updated on the latest promotions, healthcare tips, and exciting new features.
+
+Thank you for choosing MediPharm. We look forward to serving you and providing you with the best pharmacy experience. Your health is our priority!
+</string>
+
 </resources>

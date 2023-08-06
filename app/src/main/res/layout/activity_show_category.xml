@@ -49,6 +49,7 @@
             android:layout_height="190dp">
 
             <RelativeLayout
+                android:id="@+id/vitamins"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="15dp"
@@ -86,6 +87,7 @@
                 android:layout_height="190dp">
 
                 <RelativeLayout
+                    android:id="@+id/pain"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginStart="20dp"
@@ -126,6 +128,7 @@
             android:layout_height="190dp">
 
             <RelativeLayout
+                android:id="@+id/vaccin"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="15dp"
@@ -162,6 +165,7 @@
             android:layout_height="190dp">
 
             <RelativeLayout
+                android:id="@+id/device"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginStart="20dp"
@@ -202,6 +206,7 @@
                 android:layout_height="190dp">
 
                 <RelativeLayout
+                    android:id="@+id/syrup"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_marginStart="20dp"

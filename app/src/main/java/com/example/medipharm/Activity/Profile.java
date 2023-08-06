@@ -28,7 +28,6 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         bottomNavigation();
 
-        openWhatsApp("+254798890551");
         ImageView imageView = findViewById(R.id.imageView4);
         AppCompatButton chooseImage = findViewById(R.id.chooseImageBtn);
         AppCompatButton takePhoto = findViewById(R.id.takePhotoBtn);
@@ -66,15 +65,6 @@ public class Profile extends AppCompatActivity {
      });
 }
 
-    private void openWhatsApp(String contactNumber) {
-        String url = "https://api.whatsapp.com/send?phone=" + contactNumber;
-
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse(url));
-        intent.setPackage("com.whatsapp");
-        startActivity(intent);
-
-    }
 
     private void bottomNavigation() {
         LinearLayout homeBtn = findViewById(R.id.homebtn);

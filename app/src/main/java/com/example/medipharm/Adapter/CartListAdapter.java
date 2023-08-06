@@ -1,6 +1,7 @@
 package com.example.medipharm.Adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,18 +16,25 @@ import com.example.medipharm.Domain.DrugDomain;
 import com.example.medipharm.Helper.ManagementCart;
 import com.example.medipharm.Interface.ChangeNumberItemsListener;
 import com.example.medipharm.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHolder> {
     private ArrayList<DrugDomain> listDrugSelected;
+    private Context context;
     private ManagementCart managementCart;
-    ChangeNumberItemsListener changeNumberItemsListener;
+    private ChangeNumberItemsListener changeNumberItemsListener;
 
-    public CartListAdapter(ArrayList<DrugDomain> listDrugSelected, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
+    public CartListAdapter(ArrayList<DrugDomain> listDrugSelected, Context context,
+                           ChangeNumberItemsListener changeNumberItemsListener, ManagementCart managementCart) {
         this.listDrugSelected = listDrugSelected;
-        this.managementCart = new ManagementCart(context);
+        this.context = context;
         this.changeNumberItemsListener = changeNumberItemsListener;
+        this.managementCart = managementCart;
     }
 
     @NonNull
@@ -38,12 +46,14 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(listDrugSelected.get(position).getTitle());
-        holder.feeEachItem.setText("ksh"+listDrugSelected.get(position).getFee());
-        holder.totalEachItem.setText("ksh"+ Math.round((listDrugSelected.get(position).getNumberInCart()*listDrugSelected.get(position).getFee())));
-        holder.num.setText(String.valueOf(listDrugSelected.get(position).getNumberInCart()));
+        DrugDomain item = listDrugSelected.get(position);
 
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(listDrugSelected.get(holder.getAdapterPosition()).getPic(),
+        holder.title.setText(item.getTitle());
+        holder.feeEachItem.setText("ksh" + item.getFee());
+        holder.totalEachItem.setText("ksh" + Math.round(item.getNumberInCart() * item.getFee()));
+        holder.num.setText(String.valueOf(item.getNumberInCart()));
+
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(item.getPic(),
                 "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
@@ -55,11 +65,49 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
             changeNumberItemsListener.changed();
         }));
 
-        holder.minusItem.setOnClickListener(v -> managementCart.minusNumberDrug(listDrugSelected, position, () -> {
-            notifyDataSetChanged();
-            changeNumberItemsListener.changed();
-        }));
+        holder.minusItem.setOnClickListener(v -> {
+            int currentNumber = item.getNumberInCart();
+            if (currentNumber > 1) {
+                managementCart.minusNumberDrug(listDrugSelected, position, () -> {
+                    notifyDataSetChanged();
+                    changeNumberItemsListener.changed();
+                });
+            } else {
+                // If the number is less than or equal to 1, remove the item from the cart
+                deleteCartItem(item);
+            }
+        });
     }
+
+    private void deleteCartItem(DrugDomain item) {
+        String itemId = item.getItemId();
+
+        // Check if the item has a valid itemId
+        if (itemId != null && !itemId.isEmpty()) {
+            DatabaseReference cartRef = FirebaseDatabase.getInstance().getReference("cart_items");
+            cartRef.child(itemId).removeValue()
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            // Item deleted successfully from the database
+                            // Now remove the item from the local list and notify the adapter
+                            listDrugSelected.remove(item);
+                            notifyDataSetChanged();
+                            // Recalculate the cart total after item removal
+                            changeNumberItemsListener.changed();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.e("CartListAdapter", "Failed to delete cart item: " + e.getMessage());
+                        }
+                    });
+        } else {
+            Log.e("CartListAdapter", "Failed to delete cart item: ItemId is null or empty");
+        }
+    }
+
 
     @Override
     public int getItemCount() {
