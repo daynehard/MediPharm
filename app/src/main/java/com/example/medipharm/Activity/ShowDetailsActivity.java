@@ -14,8 +14,8 @@ import com.example.medipharm.Helper.ManagementCart;
 import com.example.medipharm.R;
 
 public class ShowDetailsActivity extends AppCompatActivity {
-private TextView addToCartBtn;
-private TextView titleTxt, feeTxt, descriptionTxt, numberOrderTxt, howtouseTxt;
+private TextView addtoCartBtn;
+private TextView titleTxt, feeTxt, descriptionTxt, numberOrderTxt, howtouseTxt, totalPriceTxt;
 private ImageView plusBtn, minusBtn, picDrug;
 private DrugDomain object;
 int numberOrder = 1;
@@ -43,12 +43,14 @@ private ManagementCart managementCart;
         descriptionTxt.setText(object.getDescription());
         howtouseTxt.setText(object.getHowtouse());
         numberOrderTxt.setText(String.valueOf(numberOrder));
+        totalPriceTxt.setText("ksh"+numberOrder * object.getFee());
 
         plusBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 numberOrder= numberOrder + 1;
                 numberOrderTxt.setText(String.valueOf(numberOrder));
+                totalPriceTxt.setText("ksh"+numberOrder * object.getFee());
             }
         });
 
@@ -59,10 +61,11 @@ private ManagementCart managementCart;
                     numberOrder = numberOrder - 1;
                 }
                 numberOrderTxt.setText(String.valueOf(numberOrder));
+                totalPriceTxt.setText("ksh"+numberOrder * object.getFee());
             }
         });
 
-        addToCartBtn.setOnClickListener(new View.OnClickListener() {
+        addtoCartBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 object.setNumberInCart(numberOrder);
@@ -72,14 +75,15 @@ private ManagementCart managementCart;
     }
 
     private void initview() {
-        addToCartBtn= findViewById(R.id.addToCartBtn);
-        titleTxt= findViewById(R.id.titleTxt);
-        feeTxt= findViewById(R.id.priceTxt);
-        descriptionTxt= findViewById(R.id.descriptionTxt);
-        howtouseTxt = findViewById(R.id.howtouseTxt);
-        numberOrderTxt= findViewById(R.id.numberOrderTxt);
-        plusBtn= findViewById(R.id.plusBtn);
-        minusBtn= findViewById(R.id.minusBtn);
+        addtoCartBtn= findViewById(R.id.addtoCartBtn);
+        titleTxt= findViewById(R.id.titletxt);
+        feeTxt= findViewById(R.id.pricetxt);
+        descriptionTxt= findViewById(R.id.descriptiontxt);
+        howtouseTxt = findViewById(R.id.howtousetxt);
+        numberOrderTxt= findViewById(R.id.numberItemtxt);
+        plusBtn= findViewById(R.id.plusCartBtn2);
+        minusBtn= findViewById(R.id.minusCartBtn2);
         picDrug= findViewById(R.id.picdrug);
+        totalPriceTxt = findViewById(R.id.totalPriceTxt);
     }
 }

@@ -50,7 +50,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailsActivity.class);
-                intent.putExtra("object", popularDrug.get(holder.getAdapterPosition()));
+                intent.putExtra("object", popularDrug.get(position));
                 holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -58,7 +58,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.ViewHold
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(holder.itemView.getContext(), ShowDetailsActivity.class);
-                intent.putExtra("object", popularDrug.get(holder.getAdapterPosition()));
+                intent.putExtra("object", popularDrug.get(position));
                 holder.itemView.getContext().startActivity(intent);
             }
         });

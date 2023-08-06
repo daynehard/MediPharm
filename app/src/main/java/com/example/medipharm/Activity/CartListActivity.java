@@ -36,9 +36,24 @@ private ScrollView scrollView;
 
         initView();
         initList();
-        CalculateCart();
+        calculateCard();
         bottomNavigation();
     }
+
+    private void calculateCard() {
+        double percentTax = 0.02;
+        double delivery = 100;
+
+        tax = Math.round((managementCart.getTotalFee()*percentTax)*100.0)/100.0;
+        double total = Math.round((managementCart.getTotalFee()+tax+delivery)*100.0)/100.0;
+        double itemTotal = Math.round(managementCart.getTotalFee()*100.0)/100.0;
+
+        totalFeeTxt.setText("ksh"+itemTotal);
+        taxTxt.setText("ksh"+tax);
+        deliveryTxt.setText("ksh"+delivery);
+        totalTxt.setText("ksh"+total);
+    }
+
     private void bottomNavigation(){
         LinearLayout homeBtn = findViewById(R.id.homebtn);
         LinearLayout profileBtn = findViewById(R.id.profilbtn);
@@ -80,19 +95,10 @@ private ScrollView scrollView;
         totalTxt = findViewById(R.id.totalTxt);
         emptyTxt = findViewById(R.id.emptyTxt);
         scrollView = findViewById(R.id.scrollView3);
-        recyclerViewList = findViewById(R.id.recyclerView);
     }
 
     private void initList() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
-        recyclerViewList = findViewById(R.id.recyclerView);
-
-        if (recyclerViewList == null) {
-            // Handle the case where the RecyclerView is not found in the layout
-            // You might want to check the correct ID or the layout's structure
-            Log.e("CartListActivity", "RecyclerView is null");
-            return;
-        }
         recyclerViewList.setLayoutManager(linearLayoutManager);
         adapter = new CartListAdapter(managementCart.getListCart(), this, new ChangeNumberItemsListener() {
             @Override
@@ -108,20 +114,7 @@ private ScrollView scrollView;
         } else {
             emptyTxt.setVisibility(View.GONE);
             scrollView.setVisibility(View.VISIBLE);
-
-            // Output the items added to cart
-            StringBuilder itemsText = new StringBuilder();
-            for (DrugDomain drug : managementCart.getListCart()) {
-                itemsText.append(drug.getTitle()).append(", ");
-            }
-            // Remove the trailing comma and space
-            if (itemsText.length() > 2) {
-                itemsText.setLength(itemsText.length() - 2);
-            }
-            // Display the items in a TextView or logcat
-            Log.d("CartListActivity", "Items in cart: " + itemsText.toString());
-            // Alternatively, you can set the items text to a TextView if you have one
-            // itemsTextView.setText(itemsText.toString());
+            
         }
     }
 

@@ -19,12 +19,12 @@ import com.example.medipharm.R;
 import java.util.ArrayList;
 
 public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHolder> {
-    private ArrayList<DrugDomain> drugDomains;
+    private ArrayList<DrugDomain> listDrugSelected;
     private ManagementCart managementCart;
-    private ChangeNumberItemsListener changeNumberItemsListener;
+    ChangeNumberItemsListener changeNumberItemsListener;
 
-    public CartListAdapter(ArrayList<DrugDomain> drugDomains, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
-        this.drugDomains = drugDomains;
+    public CartListAdapter(ArrayList<DrugDomain> listDrugSelected, Context context, ChangeNumberItemsListener changeNumberItemsListener) {
+        this.listDrugSelected = listDrugSelected;
         this.managementCart = new ManagementCart(context);
         this.changeNumberItemsListener = changeNumberItemsListener;
     }
@@ -38,48 +38,32 @@ public class CartListAdapter extends RecyclerView.Adapter<CartListAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.title.setText(drugDomains.get(holder.getAdapterPosition()).getTitle());
-        holder.feeEachItem.setText(String.valueOf(drugDomains.get(holder.getAdapterPosition()).getFee()));
-        holder.totalEachItem.setText(String.valueOf(Math.round((drugDomains.get(holder.getAdapterPosition()).getNumberInCart() * drugDomains.get(holder.getAdapterPosition()).getFee()) * 100) / 100));
-        holder.num.setText(String.valueOf(drugDomains.get(holder.getAdapterPosition()).getNumberInCart()));
+        holder.title.setText(listDrugSelected.get(position).getTitle());
+        holder.feeEachItem.setText("ksh"+listDrugSelected.get(position).getFee());
+        holder.totalEachItem.setText("ksh"+ Math.round((listDrugSelected.get(position).getNumberInCart()*listDrugSelected.get(position).getFee())));
+        holder.num.setText(String.valueOf(listDrugSelected.get(position).getNumberInCart()));
 
-        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(drugDomains.get(holder.getAdapterPosition()).getPic(),
+        int drawableResourceId = holder.itemView.getContext().getResources().getIdentifier(listDrugSelected.get(holder.getAdapterPosition()).getPic(),
                 "drawable", holder.itemView.getContext().getPackageName());
 
         Glide.with(holder.itemView.getContext())
                 .load(drawableResourceId)
                 .into(holder.pic);
 
-        holder.plusItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                managementCart.plusNumberDrug(drugDomains, holder.getAdapterPosition(), new ChangeNumberItemsListener() {
-                    @Override
-                    public void changed() {
-                        notifyDataSetChanged();
-                        changeNumberItemsListener.changed();
-                    }
-                });
-            }
-        });
+        holder.plusItem.setOnClickListener(view -> managementCart.plusNumberDrug(listDrugSelected, position, () -> {
+            notifyDataSetChanged();
+            changeNumberItemsListener.changed();
+        }));
 
-        holder.minusItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                managementCart.minusNumberDrug(drugDomains, holder.getAdapterPosition(), new ChangeNumberItemsListener() {
-                    @Override
-                    public void changed() {
-                        notifyDataSetChanged();
-                        changeNumberItemsListener.changed();
-                    }
-                });
-            }
-        });
+        holder.minusItem.setOnClickListener(v -> managementCart.minusNumberDrug(listDrugSelected, position, () -> {
+            notifyDataSetChanged();
+            changeNumberItemsListener.changed();
+        }));
     }
 
     @Override
     public int getItemCount() {
-        return drugDomains.size();
+        return listDrugSelected.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
