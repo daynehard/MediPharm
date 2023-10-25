@@ -177,7 +177,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="20dp"
                 android:layout_toEndOf="@+id/card1"
-                android:text="Cards"
+                android:text="Payment Options"
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />

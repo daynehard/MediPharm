@@ -13,9 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.example.medipharm.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class Support extends BaseActivity {
+public class Support extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +29,7 @@ public class Support extends BaseActivity {
         RelativeLayout about = findViewById(R.id.about);
         RelativeLayout terms = findViewById(R.id.termsbt);
         RelativeLayout instagram = findViewById(R.id.instagram);
+        RelativeLayout settings = findViewById(R.id.settingsbt);
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +72,12 @@ public class Support extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Support.this, terms_and_conditions.class));
+            }
+        });
+        settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Support.this, Settings.class));
             }
         });
 

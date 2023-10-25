@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#0E505C"
-    tools:context=".Activity.Settings">
+    android:background="#0A4857"
+    tools:context=".Activity.HealthDetails">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <ImageView
             android:id="@+id/back_btn"
             android:layout_width="50dp"
@@ -22,60 +22,20 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             android:layout_centerInParent="true"
-            android:textSize="20sp"/>
+            android:text="User Info"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </RelativeLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/imageprofile"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center"
-                android:src="@drawable/profile1"
-                android:layout_marginTop="18dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:text="Ian Deinhard"
-                android:textColor="#ffffff"
-                android:textSize="23sp"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="iandeinhard254@gmail.com"
-                android:textColor="#ccffffff"
-                android:textSize="18sp"
-                android:layout_gravity="center"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/edit"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
-                android:layout_marginTop="20dp"
-                android:paddingStart="30dp"
-                android:paddingEnd="30dp"
-                android:text="Edit Profile"
-                android:textSize="16sp"
-                android:textAllCaps="false"
-                android:background="@drawable/round_back_secondary_100"
-                android:layout_gravity="center"/>
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:background="@drawable/round_back_white"
@@ -88,27 +48,27 @@
                 android:padding="15dp">
 
                 <RelativeLayout
-                    android:id="@+id/accbtn"
+                    android:id="@+id/whatsapp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/account"
+                        android:id="@+id/account1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="12dp"
-                        android:src="@drawable/account"/>
+                        android:src="@drawable/whatsapp"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Account"
+                        android:text="Chat with us"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/account"/>
+                        android:layout_toEndOf="@+id/account1"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -120,27 +80,27 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/privacybtn"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/privacy"
+                        android:id="@+id/email1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="12dp"
-                        android:src="@drawable/locked1"/>
+                        android:src="@drawable/email4"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Privacy and Security"
+                        android:text="Send Us an Email"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/privacy"/>
+                        android:layout_toEndOf="@+id/email1"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -152,27 +112,27 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/helpbtn"
+                    android:id="@+id/sms"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/help"
+                        android:id="@+id/sms1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="12dp"
-                        android:src="@drawable/customer"/>
+                        android:src="@drawable/comments"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Help and Support"
+                        android:text="Send Us an SMS"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/help"/>
+                        android:layout_toEndOf="@+id/sms1"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -184,12 +144,44 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/aboutbtn"
+                    android:id="@+id/instagram"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/about"
+                        android:id="@+id/instagram1"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:src="@drawable/instagram1"/>
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Follow Us On"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_toEndOf="@+id/instagram1"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="15dp"
+                        android:src="@drawable/arrow_right"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/about1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="12dp"
@@ -200,11 +192,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="About"
+                        android:text="About Us"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/about"/>
+                        android:layout_toEndOf="@+id/about1"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -216,12 +208,12 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/termsbtn"
+                    android:id="@+id/termsbt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/terms"
+                        android:id="@+id/terms1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="12dp"
@@ -236,7 +228,7 @@
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/terms"/>
+                        android:layout_toEndOf="@+id/terms1"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -248,27 +240,27 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/logoutbtn"
+                    android:id="@+id/settingsbt"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/logout"
+                        android:id="@+id/settings"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="12dp"
-                        android:src="@drawable/logout"/>
+                        android:src="@drawable/settings"/>
 
                     <TextView
                         android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Logout"
+                        android:text="Settings"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/logout"/>
+                        android:layout_toEndOf="@+id/settings"/>
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -279,8 +271,11 @@
 
                 </RelativeLayout>
 
+
+
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
+
 </LinearLayout>

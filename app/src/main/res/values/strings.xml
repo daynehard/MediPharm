@@ -2,6 +2,7 @@
     <string name="app_name">MediPharm</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_notification_channel_id" translatable="false">default_channel_id</string>
     <string name="terms_and_conditions_text">
     Terms and Conditions for MediPharm - Pharmacy App\n\n
 
@@ -50,7 +51,7 @@
     Welcome to MediPharm, your one-stop solution for all your pharmacy needs.\n Our mobile application ("App") is designed to provide convenient and reliable access to healthcare products, medications, and professional pharmacy services.\n Whether you\'re looking for over-the-counter products or prescription medications, MediPharm has got you covered.\n\n
 
 Our Mission:\n
-At MediPharm, our mission is to improve your healthcare experience by providing a seamless and user-friendly platform. We aim to empower you with easy access to essential healthcare information and reliable pharmaceutical products, all at your fingertips.
+At MediPharm, our mission is to improve your healthcare experience by providing a seamless and user-friendly platform. We aim to empower you with easy access to essential healthcare information and reliable pharmaceutical products, all at your fingertips.\n\n
 
 Our Services:\n
 1. Medication Ordering: Browse a wide range of prescription and non-prescription medications, add them to your cart, and conveniently place your orders online.
@@ -61,7 +62,7 @@ Our Services:\n
 
 4. Pharmacy Locator: Find nearby partner pharmacies for pick-up options and enjoy fast and hassle-free order fulfillment.
 
-5. Health Information: Access accurate and up-to-date health information, drug interactions, and medication guides to make informed decisions about your healthcare.
+5. Health Information: Access accurate and up-to-date health information, drug interactions, and medication guides to make informed decisions about your healthcare.\n\n
 
 Why Choose MediPharm?\n
 1. Convenience: With MediPharm, you can order medications and healthcare products from the comfort of your home, saving you time and effort.
@@ -70,13 +71,13 @@ Why Choose MediPharm?\n
 
 3. Expert Support: Our team of qualified pharmacists is available to answer your questions and provide personalized advice on medications and health concerns.
 
-4. Secure and Confidential: Your privacy is important to us. Rest assured that your personal information is protected with advanced security measures.
+4. Secure and Confidential: Your privacy is important to us. Rest assured that your personal information is protected with advanced security measures.\n\n
 
 Contact Us:\n
-If you have any questions or need assistance, our dedicated customer support team is here to help. You can reach us via email at iandeinhard254@gmail.com or call us at [+254 798890551].
+If you have any questions or need assistance, our dedicated customer support team is here to help. You can reach us via email at iandeinhard254@gmail.com or call us at [+254 798890551].\n\n
 
 Stay Connected:\n
-Follow us on social media to stay updated on the latest promotions, healthcare tips, and exciting new features.\n
+Follow us on social media to stay updated on the latest promotions, healthcare tips, and exciting new features.\n\n
 
 Thank you for choosing MediPharm. We look forward to serving you and providing you with the best pharmacy experience. Your health is our priority!
 </string>

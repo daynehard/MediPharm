@@ -2,6 +2,7 @@ package com.example.medipharm.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -48,6 +49,15 @@ public class CartListActivity extends AppCompatActivity {
         calculateCard();
         bottomNavigation();
         fetchCartItemsFromDatabase();
+
+        ConstraintLayout Checkout = findViewById(R.id.checkout);
+
+        Checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartListActivity.this, PaymentMethod.class));
+            }
+        });
     }
 
     private void fetchCartItemsFromDatabase() {
@@ -116,7 +126,7 @@ public class CartListActivity extends AppCompatActivity {
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartListActivity.this, MainActivity.class));
+                startActivity(new Intent(CartListActivity.this, Profile.class));
             }
         });
         supportBtn.setOnClickListener(new View.OnClickListener() {

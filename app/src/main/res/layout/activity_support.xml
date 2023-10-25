@@ -203,7 +203,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="About"
+                        android:text="About Us"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
@@ -249,6 +249,39 @@
                         android:src="@drawable/arrow_right"/>
 
                 </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/settingsbt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/settings"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:src="@drawable/settings"/>
+
+                    <TextView
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="Settings"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_toEndOf="@+id/settings"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="15dp"
+                        android:src="@drawable/arrow_right"/>
+
+                </RelativeLayout>
+
 
 
             </LinearLayout>
