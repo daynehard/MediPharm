@@ -5,7 +5,10 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -33,6 +36,23 @@ public class Settings extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
+        final AppCompatButton myButton = findViewById(R.id.edit);
+
+        // Set the animation
+        final Animation buttonPressAnimation = AnimationUtils.loadAnimation(this, R.anim.button_press_animation);
+
+        // Set a listener for the button press
+        myButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    // Start the animation when the button is pressed
+                    myButton.startAnimation(buttonPressAnimation);
+                }
+                return false;
+            }
+        });
 
         firebaseAuth = FirebaseAuth.getInstance();
         currentUser = firebaseAuth.getCurrentUser();

@@ -42,6 +42,7 @@ public class CartListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_list);
 
+
         managementCart = new ManagementCart(this);
 
         initView();

@@ -75,7 +75,7 @@ public class Profile extends AppCompatActivity {
         edituser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Profile.this, UserInfo.class));
+                startActivity(new Intent(Profile.this, HealthDetails.class));
             }
         });
         payment.setOnClickListener(new View.OnClickListener() {

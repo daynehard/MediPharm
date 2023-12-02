@@ -42,7 +42,7 @@ public class MpesaCheckout extends AppCompatActivity {
         OkHttpClient client = new OkHttpClient();
 
         MediaType mediaType = MediaType.parse("application/json");
-        String requestBody = "{\"BusinessShortCode\": \"YOUR_SHORTCODE\", " +
+        String requestBody = "{\"O61JglK7xDwqrniAnMdCDIChG19yS0lA\": \"N/A\", " +
                 "\"Password\": \"YOUR_PASSWORD\", " +
                 "\"Timestamp\": \"YOUR_TIMESTAMP\", " +
                 "\"TransactionType\": \"CustomerPayBillOnline\", " +

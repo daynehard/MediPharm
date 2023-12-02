@@ -23,19 +23,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="User Info"
+            android:text="Personal Details"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="254dp"
+                android:layout_height="144dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/undraw_profile_details_re_ch9r" />
+
+
+
 
             <LinearLayout
                 android:background="@drawable/round_back_white"
@@ -48,34 +59,163 @@
                 android:padding="15dp">
 
                 <RelativeLayout
-                    android:id="@+id/whatsapp"
+                    android:id="@+id/bloodgroup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/account1"
+                        android:id="@+id/bloodtype"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="12dp"
-                        android:src="@drawable/whatsapp"/>
+                        android:src="@drawable/bloodtype"/>
 
-                    <TextView
+                    <EditText
                         android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Chat with us"
+                        android:hint="Blood Group"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/account1"/>
+                        android:textColorHint="@color/white"
+                        android:layout_toEndOf="@+id/bloodtype"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/allergies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
                     <ImageView
+                        android:id="@+id/sneeze"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:src="@drawable/sneeze"/>
+
+                    <EditText
+                        android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/arrow_right"/>
+                        android:layout_centerVertical="true"
+                        android:hint="Allergies"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:layout_toEndOf="@+id/sneeze"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/medications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/medication"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:src="@drawable/medicalcheck"/>
+
+                    <EditText
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:hint="Medications"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:layout_toEndOf="@+id/medication"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/location"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:src="@drawable/locationpin"/>
+
+                    <EditText
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:hint="Address"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textColorHint="@color/white"
+                        android:layout_toEndOf="@+id/location"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/organdonor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/organ"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:src="@drawable/heart"/>
+
+                    <EditText
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:hint="Organ Donor"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColorHint="@color/white"
+                        android:layout_toEndOf="@+id/organ"/>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/phonenumber"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:padding="12dp"
+                        android:src="@drawable/phone"/>
+
+                    <EditText
+                        android:layout_marginStart="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:hint="Phone Number"
+                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:textColorHint="@color/white"
+                        android:layout_toEndOf="@+id/phonenumber"/>
+
 
                 </RelativeLayout>
 
@@ -85,189 +225,40 @@
                     android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/email1"
+                        android:id="@+id/emailaddress"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:padding="12dp"
                         android:src="@drawable/email4"/>
 
-                    <TextView
+                    <EditText
                         android:layout_marginStart="20dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:text="Send Us an Email"
+                        android:hint="Email Address"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/email1"/>
+                        android:textColorHint="@color/white"
+                        android:layout_toEndOf="@+id/emailaddress"/>
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/arrow_right"/>
 
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/sms"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/save">
 
-                    <ImageView
-                        android:id="@+id/sms1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="12dp"
-                        android:src="@drawable/comments"/>
-
-                    <TextView
-                        android:layout_marginStart="20dp"
-                        android:layout_width="wrap_content"
+                    <Button
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Send Us an SMS"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/sms1"/>
+                        android:id="@+id/savebtn"
+                        android:background="@drawable/teal_btn_background"
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/arrow_right"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/instagram"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/instagram1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="12dp"
-                        android:src="@drawable/instagram1"/>
-
-                    <TextView
-                        android:layout_marginStart="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Follow Us On"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/instagram1"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/arrow_right"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/about"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/about1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="12dp"
-                        android:src="@drawable/about"/>
-
-                    <TextView
-                        android:layout_marginStart="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="About Us"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/about1"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/arrow_right"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/termsbt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/terms1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="12dp"
-                        android:src="@drawable/terms"/>
-
-                    <TextView
-                        android:layout_marginStart="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Terms and Conditions"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/terms1"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/arrow_right"/>
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/settingsbt"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <ImageView
-                        android:id="@+id/settings"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:padding="12dp"
-                        android:src="@drawable/settings"/>
-
-                    <TextView
-                        android:layout_marginStart="20dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:text="Settings"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/white"
-                        android:layout_toEndOf="@+id/settings"/>
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_margin="15dp"
-                        android:src="@drawable/arrow_right"/>
+                        android:text="Save"/>
 
                 </RelativeLayout>
 
@@ -276,6 +267,7 @@
             </LinearLayout>
 
         </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
+
 
 </LinearLayout>
