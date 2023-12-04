@@ -1,89 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
     android:background="#0A4857"
     tools:context=".Activity.MpesaCheckout">
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="200dp"
-        android:layout_height="150dp"
-        android:layout_alignParentEnd="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/undraw_mobile_pay_re_sjb8" />
-
-    <LinearLayout
-        android:id="@+id/layout"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textViewTotalAmount"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:background="@drawable/round_back_white"
-        android:orientation="vertical"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9">
+        android:text="Total Amount:"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"/>
 
-        <EditText
-            android:id="@+id/phoneno"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_below="@id/imageView9"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/textshape"
-            android:ems="10"
-            android:hint="Enter your phone number"
-            android:inputType="text"
-            android:paddingLeft="30dp"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView9" />
-
-
-        <EditText
-            android:id="@+id/amount"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_below="@id/imageView9"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/textshape"
-            android:ems="10"
-            android:hint="Enter your amount"
-            android:inputType="text"
-            android:layout_marginBottom="20dp"
-            android:paddingLeft="30dp"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/country" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textViewAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ksh 0.00"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:layout_below="@id/textViewTotalAmount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"/>
 
     <Button
-        android:id="@+id/mpesapay"
+        android:id="@+id/buttonInitiatePayment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:background="@drawable/teal_btn_background"
-        android:text="Proceed to Payment "
-        android:layout_margin="30dp"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="23sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout" />
+        android:text="Initiate Payment"
+        android:layout_below="@id/textViewAmount"
+        android:layout_marginTop="32dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Add other UI elements as needed -->
+
+</RelativeLayout>
