@@ -33,6 +33,7 @@ public class CartListActivity extends AppCompatActivity {
     private RecyclerView.Adapter adapter;
     private RecyclerView recyclerViewList;
     private ManagementCart managementCart;
+    private double totalAmount; // New member variable
     TextView totalFeeTxt, taxTxt, deliveryTxt, totalTxt, emptyTxt;
     private double tax;
     private ScrollView scrollView;
@@ -41,7 +42,6 @@ public class CartListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart_list);
-
 
         managementCart = new ManagementCart(this);
 
@@ -56,7 +56,10 @@ public class CartListActivity extends AppCompatActivity {
         Checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartListActivity.this, PaymentMethod.class));
+                // Pass the total amount to MpesaCheckout activity
+                Intent intent = new Intent(CartListActivity.this, PaymentMethod.class);
+                intent.putExtra("TOTAL_AMOUNT", totalAmount);
+                startActivity(intent);
             }
         });
     }
@@ -103,13 +106,13 @@ public class CartListActivity extends AppCompatActivity {
         double delivery = 100;
 
         tax = Math.round((managementCart.getTotalFee() * percentTax) * 100.0) / 100.0;
-        double total = Math.round((managementCart.getTotalFee() + tax + delivery) * 100.0) / 100.0;
+        totalAmount = Math.round((managementCart.getTotalFee() + tax + delivery) * 100.0) / 100.0; // Store the total amount
         double itemTotal = Math.round(managementCart.getTotalFee() * 100.0) / 100.0;
 
         totalFeeTxt.setText("ksh" + itemTotal);
         taxTxt.setText("ksh" + tax);
         deliveryTxt.setText("ksh" + delivery);
-        totalTxt.setText("ksh" + total);
+        totalTxt.setText("ksh" + totalAmount); // Display the total amount
     }
 
     private void bottomNavigation() {

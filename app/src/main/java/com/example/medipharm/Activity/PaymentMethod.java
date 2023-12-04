@@ -14,10 +14,15 @@ import com.example.medipharm.R;
 
 public class PaymentMethod extends AppCompatActivity {
 
+    private double totalAmount; // Add this line to declare totalAmount
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_method);
+
+        // Retrieve totalAmount from the intent
+        totalAmount = getIntent().getDoubleExtra("TOTAL_AMOUNT", 0.0);
 
         Button button1 = findViewById(R.id.paypal);
         Button button2 = findViewById(R.id.mpesa);
@@ -50,12 +55,15 @@ public class PaymentMethod extends AppCompatActivity {
                 startActivity(new Intent(PaymentMethod.this, PayPalCheckoutActivity.class));
             }
         });
+
         Mpesa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PaymentMethod.this, MpesaCheckout.class));
+                // Start MpesaCheckout activity
+                Intent mpesaIntent = new Intent(PaymentMethod.this, MpesaCheckout.class);
+                mpesaIntent.putExtra("TOTAL_AMOUNT", totalAmount);
+                startActivity(mpesaIntent);
             }
         });
-
     }
 }
